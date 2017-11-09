@@ -21,20 +21,7 @@ def signal_handler(signal, frame):
 
 signal.signal(signal.SIGINT, signal_handler)
 
-def on_connect(client, userdata, flags, rc):
-    pass
-   # print("rc: " + str(rc))
-
-def on_publish(client, obj, mid):
-    pass
-   # print("mid: " + str(mid))
-
 client = mqtt.Client()
-client.on_connect = on_connect
-client.on_publish = on_publish
-
-#client.on_log = on_log
-
 # not needed for test.mosquitto
 # client.username_pw_set(USER, PASS)
 client.connect(HOST, PORT)
