@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 import paho.mqtt.client as mqtt
 import RPi.GPIO as GPIO
 import sys, signal
@@ -10,14 +9,14 @@ def signal_handler(signal, frame):
 
 signal.signal(signal.SIGINT, signal_handler)
 
-TOPIC = "pi-temperature"
+TOPIC = "ds1820-temperature"
 HOST = "test.mosquitto.org"
 
 def on_connect(client, userdata, flag, rc):
     client.subscribe(TOPIC)
 
 def on_message(client, userdata, msg):
-    print("Temperature = ", msg.payload.decode('utf-8'))
+    print(msg.payload.decode('utf-8'))
         
 client = mqtt.Client()
 client.on_connect = on_connect
