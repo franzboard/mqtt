@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-    Publish ds1820 temperatura data
+    Publish ds1820 temperature data
     to thingspeak
 """
 import os 
